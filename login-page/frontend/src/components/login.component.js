@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 export default class Login extends React.Component {
     constructor() {
@@ -20,7 +21,30 @@ export default class Login extends React.Component {
       
     handleSubmit(e) {
         e.preventDefault();
-        console.log(this.state);
+        
+        axios.get('http://localhost:4001/users')
+            .then(res => {
+                let data = res.data;
+                console.log(data)
+
+                let isSuccess = false;
+                for (let i = 0; i < data.length; i++) {
+                  if(data[i].user_email === this.state.email) {
+                    if(data[i].user_password === this.state.password) {
+                      alert("Success! your email and password is correct");
+                      isSuccess = true;
+                      break;
+                    }
+                  }
+                }
+                if(!isSuccess) {
+                  alert("Fail! email and password incorrect");
+                }
+            })
+            .catch(function (err) {
+                console.log(err);
+            })
+        
     }
     
     render() {
