@@ -50,7 +50,7 @@ export default class Login extends React.Component {
                     placeholder="Enter password" 
                     name="password" />
                 </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-primary">Login</button>
               </form>
             </div>    
         )

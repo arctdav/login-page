@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import logo from './logo.svg';
 import Login from "./components/login.component"
 import SignUp from "./components/signup.component"
+import UsersList from "./components/users-list.component"
 
 export default class App extends React.Component {
   constructor() {
@@ -33,7 +34,7 @@ export default class App extends React.Component {
               </ul>
             </div>
           </nav>
-          <Route path="/" exact component={null} />
+          <Route path="/" exact component={UsersList} />
           <Route path="/login" component={Login} />
           <Route path="/signup" component={SignUp} />
         </div>

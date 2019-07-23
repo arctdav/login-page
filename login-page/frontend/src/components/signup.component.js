@@ -45,7 +45,7 @@ export default class SignUp extends React.Component {
     render() {
         return(
             <div className="container" style={{marginTop:"50px"}}>
-              <h2>Login Page</h2>
+              <h2>Sign Up Page</h2>
               <form onSubmit = {this.handleSubmit} style={{marginTop:"20px"}}>
                 <div className="form-group">
                   <label>Email:</label>
